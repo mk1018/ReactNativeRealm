@@ -10,7 +10,7 @@ import {SafeAreaView, ScrollView} from 'react-native';
 import {Colors} from 'react-native/Libraries/NewAppScreen';
 import RealmComponent from './src/components/Realm';
 import {RealmProvider} from '@realm/react';
-import {ProfileModel} from './src/models/profileModel';
+import {ProfileModel} from './src/models/ProfileModel';
 
 export const AppWrapper = () => {
   return (
