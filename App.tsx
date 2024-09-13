@@ -6,12 +6,19 @@
  */
 
 import React from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-} from 'react-native';
-import { Colors } from 'react-native/Libraries/NewAppScreen';
-import RealmComponent from './src/components/Realm'
+import {SafeAreaView, ScrollView} from 'react-native';
+import {Colors} from 'react-native/Libraries/NewAppScreen';
+import RealmComponent from './src/components/Realm';
+import {RealmProvider} from '@realm/react';
+import {ProfileModel} from './src/models/profileModel';
+
+export const AppWrapper = () => {
+  return (
+    <RealmProvider schema={[ProfileModel]}>
+      <App />
+    </RealmProvider>
+  );
+};
 
 function App(): React.JSX.Element {
   const backgroundStyle = {
@@ -22,8 +29,7 @@ function App(): React.JSX.Element {
     <SafeAreaView style={backgroundStyle}>
       <ScrollView
         contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}
-      >
+        style={backgroundStyle}>
         <RealmComponent />
       </ScrollView>
     </SafeAreaView>
